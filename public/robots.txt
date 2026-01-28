@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /storage/*.zip
+Allow: /
+
+Sitemap: {{ url('sitemap.xml') }}
+Sitemap: {{ url('news-sitemap.xml') }}
