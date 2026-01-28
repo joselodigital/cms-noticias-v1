@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Pagination\Paginator;
 use App\Models\Category;
+use App\Models\Page;
+use App\Models\TopBarLink;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('layouts.public', function ($view) {
             $view->with('navbarCategories', Category::orderBy('name')->get());
+            $view->with('footerCategories', Category::latest()->take(5)->get());
+            $view->with('footerPages', Page::where('is_active', true)->get());
+            $view->with('topBarLinks', TopBarLink::where('is_active', true)->orderBy('order')->get());
         });
 
         if (\Illuminate\Support\Facades\Schema::hasTable('site_settings')) {

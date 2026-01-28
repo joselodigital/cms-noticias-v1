@@ -26,11 +26,12 @@ class SiteSettingController extends Controller
         $request->validate([
             'site_name' => 'required|string|max:255',
             'site_description' => 'nullable|string|max:255',
+            'footer_about_us' => 'nullable|string|max:1000',
             'favicon' => 'nullable|image|mimes:ico,png,jpg,jpeg,svg|max:1024', // 1MB Max, support common favicon formats
         ]);
 
         $settings = SiteSetting::firstOrFail();
-        $data = $request->only(['site_name', 'site_description']);
+        $data = $request->only(['site_name', 'site_description', 'footer_about_us']);
 
         if ($request->hasFile('favicon')) {
             if ($settings->favicon_path) {

@@ -79,6 +79,9 @@
                     <a href="{{ route('admin.social_links.index') }}" class="flex items-center gap-2 px-6 py-3 hover:bg-slate-100 dark:hover:bg-slate-900/80 {{ request()->routeIs('admin.social_links.*') ? 'bg-slate-100 dark:bg-slate-900 border-l-4 border-blue-500' : '' }}">
                         Redes Sociales
                     </a>
+                    <a href="{{ route('admin.top_bar_links.index') }}" class="flex items-center gap-2 px-6 py-3 hover:bg-slate-100 dark:hover:bg-slate-900/80 {{ request()->routeIs('admin.top_bar_links.*') ? 'bg-slate-100 dark:bg-slate-900 border-l-4 border-blue-500' : '' }}">
+                        Menú Superior
+                    </a>
                     <a href="{{ route('admin.pages.index') }}" class="flex items-center gap-2 px-6 py-3 hover:bg-slate-100 dark:hover:bg-slate-900/80 {{ request()->routeIs('admin.pages.*') ? 'bg-slate-100 dark:bg-slate-900 border-l-4 border-blue-500' : '' }}">
                         Páginas Estáticas
                     </a>

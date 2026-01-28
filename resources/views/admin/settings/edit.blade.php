@@ -33,6 +33,16 @@
                             @enderror
                         </div>
 
+                        <!-- Sobre Nosotros (Footer) -->
+                        <div class="mb-4">
+                            <label for="footer_about_us" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Sobre Nosotros (Footer)</label>
+                            <textarea name="footer_about_us" id="footer_about_us" rows="4" class="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:bg-slate-900 dark:text-white">{{ old('footer_about_us', $settings->footer_about_us) }}</textarea>
+                            <p class="text-xs text-gray-500 dark:text-slate-400 mt-1">Este texto aparecerá en la sección "Sobre Nosotros" del pie de página.</p>
+                            @error('footer_about_us')
+                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+
                         <!-- Favicon -->
                         <div class="mb-4">
                             <label for="favicon" class="block text-sm font-medium text-gray-700 dark:text-slate-300">Favicon</label>

@@ -65,6 +65,9 @@ Route::middleware(['auth', 'role:super-admin|admin|editor'])->prefix('admin')->a
 
     // Rutas de Mensajes de Contacto
     Route::resource('messages', App\Http\Controllers\Admin\ContactMessageController::class)->only(['index', 'show', 'destroy']);
+
+    // Rutas de Enlaces del Top Bar
+    Route::resource('top_bar_links', App\Http\Controllers\Admin\TopBarLinkController::class);
 });
 
 Route::middleware('auth')->group(function () {

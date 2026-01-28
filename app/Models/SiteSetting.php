@@ -9,6 +9,7 @@ class SiteSetting extends Model
     protected $fillable = [
         'site_name',
         'site_description',
+        'footer_about_us',
         'logo_light_path',
         'logo_dark_path',
         'favicon_path',
